@@ -3,6 +3,7 @@
 An IDA Pro plugin to recognize function symbols online.
 
 **Original author**: [aliyunav](https://github.com/aliyunav) 
+
 **Original source**: [GitHub Repository](https://github.com/aliyunav/Finger)
 
 ---
