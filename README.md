@@ -37,13 +37,13 @@ Before installing Finger, make sure you have the following:
 
 1. You may right-click the functions to recognize them.
 
-![1](D:\Project\Source\Finger\assets\1.png)
+![1](./assets/1.png)
 
 2. You can also right-click in the disassembly or pseudocode window.
 
-![2](D:\Project\Source\Finger\assets\2.png)
+![2](./assets/2.png)
 
-![3](D:\Project\Source\Finger\assets\3.png)
+![3](./assets/3.png)
 
 ---
 
