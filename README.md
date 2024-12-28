@@ -52,3 +52,9 @@ Before installing Finger, make sure you have the following:
 
 - The recognized function symbols will **NOT** be highlighted in the **disassembly window** and **function window**. You can uncomment the relative codes and change the color yourself.
 - "Unknown functions" refers to those starting with "sub_".
+
+---
+
+## License
+
+GNU General Public License v3.0
