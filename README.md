@@ -2,7 +2,7 @@
 
 An IDA Pro plugin to recognize function symbols online.
 
-**Original author**: [aliyunav](https://github.com/aliyunav) 
+**Original author**: [aliyunav](https://github.com/aliyunav)
 
 **Original source**: [GitHub Repository](https://github.com/aliyunav/Finger)
 
@@ -12,8 +12,8 @@ An IDA Pro plugin to recognize function symbols online.
 
 Before installing Finger, make sure you have the following:
 
-1. **Python 2.7** or **Python 3** (version must match your IDAPython version).  
-2. **IDA Pro** version **7.0** or higher.  
+1. **Python 2.7** or **Python 3** (version must match your IDAPython version).
+2. **IDA Pro** version **7.0** or higher.
 3. Install the `finger_sdk` package:
 
    ```bash
@@ -24,9 +24,9 @@ Before installing Finger, make sure you have the following:
 
 ### Installation
 
-1. Verify that all prerequisites are met.  
-2. Download the `finger_plugin.py` file from the repository.  
-3. Place the file in the following directory:  
+1. Verify that all prerequisites are met.
+2. Download the `finger_plugin.py` file from the repository.
+3. Place the file in the following directory:
 
    ```
    path/to/your/ida/plugins
@@ -50,8 +50,8 @@ Before installing Finger, make sure you have the following:
 
 ### Notes
 
-- The recognized function symbols will **NOT** be highlighted in the **disassembly window** and **function window**. You can uncomment the relative codes and change the color yourself.
 - "Unknown functions" refers to those starting with "sub_".
+- The recognized function symbols will **NOT** be highlighted in the **disassembly window** and **function window**. You can uncomment the relative codes and change the color yourself.
 
 ---
 
