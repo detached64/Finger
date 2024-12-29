@@ -31,22 +31,6 @@ class FingerManager:
             func_symbol = str(func_symbol)  # python2 unicode to str
         return func_symbol
 
-    def recognize_function(self):
-        ea = idaapi.get_screen_ea()
-        pfn = idaapi.get_func(ea)
-        if pfn:
-            func_name = idc.get_func_name(pfn.start_ea)
-            func_symbol = self.fetch_function_symbol(pfn.start_ea)
-            if func_symbol:
-                #idc.set_color(pfn.start_ea, idc.CIC_FUNC, 0x98FF98)
-                idaapi.set_name(pfn.start_ea, func_symbol, idaapi.SN_FORCE)
-                idaapi.update_func(pfn)
-                print("[+]%s -> %s" %(func_name, func_symbol))
-            else:
-                print("[-]%s recognize failed." %(func_name))
-        else:
-            print("[-]0x%x is not a function." %ea)
-
     def recognize_selected_functions(self, funcs):
         count = 0
         for pfn in funcs:
@@ -63,16 +47,22 @@ class FingerManager:
         print("[+]%d among %d recognized successfully." %(count, len(list(funcs))))
 
     def recognize_unknown_functions(self):
+        print("[+]Collecting unknown functions...")
         func = []
         for ea in idautils.Functions():
             if idc.get_func_name(ea).startswith("sub_"):
                 func.append(idaapi.get_func(ea))
+        print("[+]%s unknown functions found." %len(func))
+        print("[+]Recognizing...")
         self.recognize_selected_functions(func)
 
     def recognize_all_functions(self):
+        print("[+]Collecting unknown functions...")
         funcs = []
         for ea in idautils.Functions():
             funcs.append(idaapi.get_func(ea))
+        print("[+]%s functions found." %len(funcs))
+        print("[+]Recognizing...")
         self.recognize_selected_functions(funcs)
 
 
@@ -125,8 +115,9 @@ class FingerUIManager:
         return True
 
     def function_callback(self, ctx):
+        funcs = [idaapi.get_func(idaapi.get_screen_ea())]
         if ctx.action == "Finger:RecognizeFunction":
-            self.mgr.recognize_function()
+            self.mgr.recognize_selected_functions(funcs)
 
     def selected_functions_callback(self, ctx):
         funcs = list(map(idaapi.getn_func, ctx.chooser_selection))
